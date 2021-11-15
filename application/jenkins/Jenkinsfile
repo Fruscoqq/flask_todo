@@ -15,7 +15,7 @@ pipeline{
                 steps{
                     sh "sudo apt update"
                     sh "sudo apt install python3-venv python3-pip python3 -y"
-                    sh "Its working"
+                    sh 'echo "Its working"'
                 }
             }
         }
