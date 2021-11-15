@@ -23,7 +23,7 @@ pipeline{
             stage('Run'){
                 steps{
                    script{
-                       if(env.RUN_APP = "true") {
+                       if(env.RUN_APP == "true") {
                            sh "bash application/jenkins/run_app.sh"
                        }
                    }
