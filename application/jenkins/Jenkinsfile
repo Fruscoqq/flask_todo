@@ -16,12 +16,12 @@ pipeline{
             } 
             stage('Create Schema'){
                 steps{
-                    sh "python3 create.py"
+                    sh "bash application/jenkins/create_schema.sh"
                 }
             }
             stage('Run'){
                 steps{
-                    sh "python3 app.py"
+                   sh "bash application/jenkins/run_app.sh"
                 }
             }
         }
