@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #activate virtual env
-source env/bin/activate
+source venv/bin/activate
 
 # Running the app
 python3 app.py
