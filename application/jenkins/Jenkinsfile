@@ -6,12 +6,12 @@ pipeline{
         stages{
             stage('Setup'){
                 steps{
-                    sh "bash jenkins/setup.sh"
+                    sh "bash application/jenkins/setup.sh"
                 }
             }
             stage('Test'){
                 steps{
-                    sh "bash jenkins/test.sh"
+                    sh "bash application/jenkins/test.sh"
                 }
             } 
             stage('Create Schema'){
