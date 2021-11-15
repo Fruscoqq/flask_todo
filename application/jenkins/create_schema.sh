@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #activate virtual env
 source env/bin/activate
 
