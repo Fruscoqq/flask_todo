@@ -1,14 +1,21 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('Bin bashing'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                    sh "#!/bin/bash"
                 }
             }
-            stage('Make Files'){
+            stage('Exporting global variables'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    sh "export DATABASE_URI"
+                }
+            }
+            stage('Installing apt dependencies'){
+                steps{
+                    sh "sudo apt update"
+                    sh "sudo apt install python3-venv python3-pip python3 -y"
+                    sh "Its working"
                 }
             }
         }
