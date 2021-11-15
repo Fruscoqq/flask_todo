@@ -2,6 +2,7 @@ pipeline{
         agent any
         environment {
             DATABASE_URI = credentials("DB_URI")
+            RUN_APP = "false"
         }
         stages{
             stage('Setup'){
@@ -21,7 +22,11 @@ pipeline{
             }
             stage('Run'){
                 steps{
-                   sh "bash application/jenkins/run_app.sh"
+                   script{
+                       if(env.RUN_APP = "true") {
+                           sh "bash application/jenkins/run_app.sh"
+                       }
+                   }
                 }
             }
         }
