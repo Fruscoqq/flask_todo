@@ -1,46 +1,27 @@
 pipeline{
         agent any
+        enviroment {
+            DATABASE_URI = credentials("DATABASE_URI")
+        }
         stages{
-            stage('Bin bashing'){
+            stage('Setup'){
                 steps{
-                    sh "#!/bin/bash"
+                    sh "bash jenkins/setup.sh"
                 }
             }
-            stage('Exporting global variables'){
+            stage('Test'){
                 steps{
-                    sh "export DATABASE_URI"
+                    sh "bash jenkins/test.sh"
                 }
-            }
-            stage('Installing apt dependencies'){
-                steps{
-                    sh "sudo apt update"
-                    sh "sudo apt install python3-venv python3-pip python3 -y"
-                    sh 'echo "Its working"'
-                }
-            }
-            stage('Creating virtual env'){
-                steps{
-                    sh "python3 -m venv venv"
-                }
-            }
-            stage('Activating virtual env'){
-                steps{
-                    sh "source venv/bin/activate"
-                }
-            }
-            stage('Installing requirements'){
-                steps{
-                    sh 'pip3 install -r requirements.txt'
-                }
-            }
-            stage('Running tests'){
-                steps{
-                    sh "python3 -m pytest --cov=tests --cov-report term missing"
-                }
-            }
-            stage("Creating DB schema"){
+            } 
+            stage('Create Schema'){
                 steps{
                     sh "python3 create.py"
+                }
+            }
+            stage('Run'){
+                steps{
+                    sh "python3 app.py"
                 }
             }
         }
