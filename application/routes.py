@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import Tasks
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 
 
 @app.route('/')
@@ -16,6 +16,7 @@ def add():
     new_task = Tasks(description=description)
     db.session.add(new_task)
     db.session.commit()
+    flash("Your item has been added successfully")
     return redirect(url_for("index"))
 
 # Update Route
