@@ -14,13 +14,13 @@ def add():
     # add new task
     description = request.form.get("description")
     if description == "":
-        flash("Something went wrong", "warning")
+        flash("Something went wrong", "newWarning")
         return redirect(url_for("index"))
     else:
         new_task = Tasks(description=description)
         db.session.add(new_task)
         db.session.commit()
-        flash("Your item has been added successfully", "success")
+        flash("Your item has been added successfully", "newSuccess")
         return redirect(url_for("index"))
 
 # Update Route
@@ -42,6 +42,6 @@ def delete(task_id):
     task = Tasks.query.filter_by(id=task_id).first()
     db.session.delete(task)
     db.session.commit()
-    flash("Your item has been deleted", "danger")
+    flash("Your item has been deleted", "newDanger")
     return redirect(url_for("index"))
 

@@ -30,17 +30,17 @@
                 {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                 {% for category, message in messages %}
-                {%if category == "warning"%}
-                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {%if category == "newWarning"%}
+                <div class="alert {{category}} alert-dismissible fade show" role="alert">
                     <lead class="font-weight-normal">{{message}} <i class="fas fa-exclamation-triangle"></i></lead>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 {%endif%}
-                {%if category == "success" or category=="danger"%}
-                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
-                    <lead class="font-weight-normal text-dark">{{message}} <i class="fas fa-check-circle"></i></lead>
+                {%if category == "newSuccess" or category=="newDanger"%}
+                <div class="alert {{category}} alert-dismissible fade show" role="alert">
+                    <lead class="font-weight-normal">{{message}} <i class="fas fa-check-circle"></i></lead>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -55,7 +55,7 @@
                         <input type="text" name="description" placeholder="Your track.." class="form-control">
                     </div>
                     <div class="divBtn text-center">
-                        <button type="submit" class="btn btn-success submit text-center btn-block">Submit <i
+                        <button type="submit" class="btn submit text-center btn-block btnSubmit">Submit <i
                                 class="far fa-arrow-alt-circle-right"></i></button>
                     </div>
                 </form>
@@ -72,10 +72,10 @@
                         <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
                             laudantium
                             itaque doloremque.</p> -->
-                        <a href="/update/{{task.id}}" class="btn btn-warning mx-3">Update <i class="fas fa-pen"></i></a>
+                        <a href="/update/{{task.id}}" class="btn btnUpdate mx-3">Update <i class="fas fa-pen"></i></a>
                         <!-- <a href="/delete/{{task.id}}" class="btn btn-danger">Delete <i class="fas fa-trash"></i></a> -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btnDelete" data-toggle="modal" data-target="#exampleModal">
                             Delete <i class="fas fa-trash"></i>
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"

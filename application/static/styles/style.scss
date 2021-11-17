@@ -1,6 +1,32 @@
+$bg-primary: #EBF9FA;
+$text-primary: #EBF9FA;
+$text-secondary: #1f1f1f;
+$bg-blue: #07689F;
+$bg-success: #9DDFD3;
+$bg-danger: #D7385E;
+$bg-warning: #FFC93C;
+$bg-purple: #31326F;
+$bg-red: #D7385E;
+
+
 * {
     font-family: 'Montserrat', sans-serif;
-    border-radius: 0 !important;
+    border-radius: 1px !important;
+}
+
+.newSuccess {
+    background: $bg-success;
+    color: $text-secondary;
+}
+
+.newDanger {
+    background: $bg-danger;
+    color: $text-primary;
+}
+
+.newWarning {
+    background: $bg-warning;
+    color: $text-secondary;
 }
 
 .nav-box {
@@ -8,21 +34,22 @@
     min-height: 20vh;
 
     .brand {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: 600;
-        background: #EBF9FA;
+        background: $bg-primary;
         padding: 1rem 1rem;
     }
 
     p {
         font-size: 0.7rem;
-        background: #EBF9FA;
+        background: $bg-primary;
         padding: 1rem 1rem;
     }
 }
 
 .container {
-    background-image: linear-gradient(to right top, #165bc2, #2164cd, #2b6dd7, #3476e2, #3c7fed);
+    // background-image: linear-gradient(to right top, #165bc2, #2164cd, #2b6dd7, #3476e2, #3c7fed);
+    background-image: linear-gradient(to right top, #07689f, #0978aa, #1988b3, #2c98bc, #40a8c4);
 
     .submit {
     transition: all 0.2s ease;
@@ -42,8 +69,30 @@
       padding-top: 3rem;
       h1 {
           font-size: 3rem;
-          font-weight: 500;
+          font-weight: 600;
       }
+  }
+
+  .card {
+    background: $bg-primary;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px;
+  }
+
+  .btnSubmit{
+      background: $bg-warning;
+      color: $bg-purple;
+      font-weight: 500;
+      font-size: 1.2rem;
+  }
+
+  .btnUpdate {
+      background: $bg-purple;
+      color: $text-primary;
+  }
+
+  .btnDelete {
+      background: $bg-red;
+      color: $text-primary;
   }
   
 }
