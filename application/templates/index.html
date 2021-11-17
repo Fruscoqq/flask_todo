@@ -19,8 +19,8 @@
 <body>
     <div class="container mt-3">
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 col-md-12 align-content-center bg-secondary py-3 alerts">
-                <h1 class="text-center text-light my-3">Todo App</h1>
+            <div class="col-lg-6 col-md-12 align-content-center  py-3 alerts">
+                <h1 class="text-center text-dark my-3">NOT Todo App</h1>
                 {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                 {% for category, message in messages %}
@@ -48,8 +48,10 @@
                         <!-- <label for="description" class="form-label lead">Title</label> -->
                         <input type="text" name="description" placeholder="Your todo.." class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary submit">Submit <i
-                            class="far fa-arrow-alt-circle-right"></i></button>
+                    <div class="divBtn text-center">
+                        <button type="submit" class="btn btn-primary submit text-center btn-block">Submit <i
+                                class="far fa-arrow-alt-circle-right"></i></button>
+                    </div>
                 </form>
                 {% for task in tasks_list %}
                 <!-- <div class="card">
@@ -58,19 +60,47 @@
                <a href="/delete/{{task.id}}" class="btn btn-danger">Delete</a>
            </div> -->
 
-                <div class="card py-3 my-3" style="width: 28rem;">
-                    <div class="card-body">
+                <div class="card py-3 my-3">
+                    <div class="card-body text-center justify-content-center">
                         <h5 class="card-title">{{task.description}}</h5>
                         <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
                             laudantium
                             itaque doloremque.</p> -->
-                        <a href="/update/{{task.id}}" class="btn btn-warning">Update <i class="fas fa-pen"></i></a>
-                        <a href="/delete/{{task.id}}" class="btn btn-danger">Delete <i class="fas fa-trash"></i></a>
+                        <a href="/update/{{task.id}}" class="btn btn-warning mx-3">Update <i class="fas fa-pen"></i></a>
+                        <!-- <a href="/delete/{{task.id}}" class="btn btn-danger">Delete <i class="fas fa-trash"></i></a> -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            Delete <i class="fas fa-trash"></i>
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <i class="fas fa-exclamation-triangle fa-3x my-3"></i>
+                                        <h3>Are you sure?</h3>
+                                        <p>You won't be able to revert this!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="/delete/{{task.id}}" class="btn btn-primary">Yes, delete it!</a>
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            <div class="col-lg-6 col-md-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore delectus
+            <div class="col-lg-6 col-md-12 box-2 align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Labore
+                delectus
                 tempore, nisi quis aliquam reprehenderit tenetur rerum numquam eos, obcaecati qui provident placeat
                 dignissimos? Officia numquam voluptatem vel ducimus quo.</div>
         </div>

@@ -1,6 +1,9 @@
 .container {
-  background: #f0f0f0; }
+  background-image: linear-gradient(to right top, #165bc2, #175ec7 25%, #1962cb 50%, #1a65d0 75%,
+    #1b69d5); }
   .container .submit {
     transition: all 0.2s ease; }
     .container .submit:hover {
       transform: translate(0, -3px); }
+  .container .modal i {
+    color: #DC3545; }

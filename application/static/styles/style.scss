@@ -1,13 +1,19 @@
 
 
 .container {
-    background: rgb(240, 240, 240);
+    background-image: linear-gradient(to right top, #165bc2, #175ec7, #1962cb, #1a65d0, #1b69d5);
 
     .submit {
     transition: all 0.2s ease;
-    &:hover {
+        &:hover {
         transform: translate(0, -3px);
-    }
-    }
+                }
+            }
 
+  .modal i {
+      color: #DC3545;
+  }
+
+  
+  
 }
