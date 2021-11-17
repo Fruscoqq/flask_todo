@@ -20,11 +20,13 @@
             font-size: 1.3rem;
             font-weight: 600;
             background: #EBF9FA;
-            padding: 1rem 1rem; }
+            padding: 1rem 1rem;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; }
             .nav-box p {
               font-size: 0.7rem;
               background: #EBF9FA;
-              padding: 1rem 1rem; }
+              padding: 1rem 1rem;
+              box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; }
 
 .container {
   background-image: linear-gradient(to right top, #07689f, #0978aa 25%, #1988b3 50%, #2c98bc 75%,
@@ -44,13 +46,15 @@
         font-size: 3rem;
         font-weight: 600; }
   .container .card {
-    background: #EBF9FA;
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px; }
+    background: #a9dbf8;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    color: #1f1f1f; }
     .container .btnSubmit {
       background: #FFC93C;
       color: #31326F;
       font-weight: 500;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; }
       .container .btnUpdate {
         background: #31326F;
         color: #EBF9FA; }

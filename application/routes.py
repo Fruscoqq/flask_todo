@@ -32,7 +32,7 @@ def update(task_id):
         db.session.commit()
         return redirect(url_for('index'))
     else:
-        flash("Your item was updated successfully", "success")
+        flash("Your item was updated successfully", "newSuccess")
         return render_template('update.html', task=task)
 
 # Delete route
