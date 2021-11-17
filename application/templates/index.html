@@ -18,9 +18,15 @@
 
 <body>
     <div class="container mt-3">
+        <div class="nav-box py-3">
+            <nav class="navbar-fluid navbar-light bg-transparent py-1">
+                <span class="navbar-brand mb-0 h1 text-uppercase brand">TrackHub</span>
+            </nav>
+            <p class="navbar-brand mb-0 h1 text-uppercase">Motosport and simracing home</p>
+        </div>
         <div class="row justify-content-md-center">
             <div class="col-lg-6 col-md-12 align-content-center  py-3 alerts">
-                <h1 class="text-center text-dark my-3">NOT Todo App</h1>
+                <!-- <h1 class="text-center text-dark my-3">NOT Todo App</h1> -->
                 {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                 {% for category, message in messages %}
@@ -46,10 +52,10 @@
                 <form action="/add" method="POST">
                     <div class="mb-3">
                         <!-- <label for="description" class="form-label lead">Title</label> -->
-                        <input type="text" name="description" placeholder="Your todo.." class="form-control">
+                        <input type="text" name="description" placeholder="Your track.." class="form-control">
                     </div>
                     <div class="divBtn text-center">
-                        <button type="submit" class="btn btn-primary submit text-center btn-block">Submit <i
+                        <button type="submit" class="btn btn-success submit text-center btn-block">Submit <i
                                 class="far fa-arrow-alt-circle-right"></i></button>
                     </div>
                 </form>
@@ -98,11 +104,12 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="col-lg-6 col-md-12 box-2 align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Labore
-                delectus
-                tempore, nisi quis aliquam reprehenderit tenetur rerum numquam eos, obcaecati qui provident placeat
-                dignissimos? Officia numquam voluptatem vel ducimus quo.</div>
+            <div class="col-lg-6 col-md-12 box-2 align-self-center">
+                <h1 class="text-left text-uppercase text-light">Add your track times here</h1>
+                <p class="lead text-light">Local World most reliable source for thing that you don't need. Speed and
+                    power is not everything, consistency is the key in winning</p>
+                <img src="../static/McLaren 650S GT3 Yellow Race Car - 640x249.png" alt="car">
+            </div>
         </div>
     </div>
 </body>

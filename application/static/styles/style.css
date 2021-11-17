@@ -1,9 +1,33 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 0 !important; }
+
+  .nav-box {
+    min-height: 20vh; }
+    .nav-box .brand {
+      font-size: 1.6rem;
+      font-weight: 600;
+      background: #EBF9FA;
+      padding: 1rem 1rem; }
+      .nav-box p {
+        font-size: 0.7rem;
+        background: #EBF9FA;
+        padding: 1rem 1rem; }
+
 .container {
-  background-image: linear-gradient(to right top, #165bc2, #175ec7 25%, #1962cb 50%, #1a65d0 75%,
-    #1b69d5); }
+  background-image: linear-gradient(to right top, #165bc2, #2164cd 25%, #2b6dd7 50%, #3476e2 75%,
+    #3c7fed); }
   .container .submit {
     transition: all 0.2s ease; }
     .container .submit:hover {
       transform: translate(0, -3px); }
   .container .modal i {
     color: #DC3545; }
+    .container .box-2 {
+      border-top: 2px solid #f8f8f8;
+      border-spacing: 15px 50px;
+      border-collapse: separate;
+      padding-top: 3rem; }
+      .container .box-2 h1 {
+        font-size: 3rem;
+        font-weight: 500; }

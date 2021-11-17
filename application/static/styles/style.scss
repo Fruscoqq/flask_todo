@@ -1,7 +1,28 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0 !important;
+}
 
+.nav-box {
+
+    min-height: 20vh;
+
+    .brand {
+        font-size: 1.6rem;
+        font-weight: 600;
+        background: #EBF9FA;
+        padding: 1rem 1rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+        background: #EBF9FA;
+        padding: 1rem 1rem;
+    }
+}
 
 .container {
-    background-image: linear-gradient(to right top, #165bc2, #175ec7, #1962cb, #1a65d0, #1b69d5);
+    background-image: linear-gradient(to right top, #165bc2, #2164cd, #2b6dd7, #3476e2, #3c7fed);
 
     .submit {
     transition: all 0.2s ease;
@@ -14,6 +35,15 @@
       color: #DC3545;
   }
 
-  
+  .box-2 {
+      border-top: 2px solid #f8f8f8;
+      border-spacing: 15px 50px;
+      border-collapse: separate;
+      padding-top: 3rem;
+      h1 {
+          font-size: 3rem;
+          font-weight: 500;
+      }
+  }
   
 }
