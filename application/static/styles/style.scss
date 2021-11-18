@@ -1,6 +1,7 @@
-$bg-primary: #EBF9FA;
-$text-primary: #EBF9FA;
-$text-secondary: #1f1f1f;
+$bg-primary: #f6fafa;
+$bg-secondary: #1a1a1a;
+$text-primary: #f0f0f0;
+$text-secondary: #252525;
 $bg-blue: #07689F;
 $bg-success: #9DDFD3;
 $bg-danger: #D7385E;
@@ -11,7 +12,7 @@ $bg-red: #D7385E;
 
 * {
     font-family: 'Montserrat', sans-serif;
-    border-radius: 1px !important;
+    border-radius: 6px !important;
 }
 
 .newSuccess {
@@ -30,63 +31,92 @@ $bg-red: #D7385E;
 }
 
 .nav-box {
-
-    min-height: 20vh;
+    min-height: 10vh;
 
     .brand {
         font-size: 1.3rem;
         font-weight: 600;
         background: $bg-primary;
-        padding: 1rem 1rem;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        color: $text-secondary;
+        padding: 0.6rem 1rem;
+        box-shadow: rgba(150, 150, 150, 0.25) 0px 14px 28px, rgba(173, 173, 173, 0.22) 0px 10px 10px;
     }
 
     p {
         font-size: 0.7rem;
         background: $bg-primary;
-        padding: 1rem 1rem;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        padding: 0.6rem 1rem;
+        box-shadow: rgba(173, 173, 173, 0.25) 0px 14px 28px, rgba(158, 158, 158, 0.22) 0px 10px 10px;
     }
 }
 
 .container {
     // background-image: linear-gradient(to right top, #165bc2, #2164cd, #2b6dd7, #3476e2, #3c7fed);
-    background-image: linear-gradient(to right top, #07689f, #0978aa, #1988b3, #2c98bc, #40a8c4);
+    // background-image: linear-gradient(to right top, #07689f, #0978aa, #1988b3, #2c98bc, #40a8c4);
+    background: rgb(240, 240, 240);
+    box-shadow: rgba(192, 192, 192, 0.25) 0px 14px 28px, rgba(70, 70, 70, 0.22) 0px 10px 10px;
+    
 
-    .submit {
-    transition: all 0.2s ease;
-        &:hover {
-        transform: translate(0, -3px);
-                }
-            }
+    // .submit {
+    // transition: all 0.2s ease;
+    //     &:hover {
+    //     transform: translate(0, -3px);
+    //             }
+    //         }
 
   .modal i {
       color: #DC3545;
   }
 
   .box-2 {
-      border-top: 2px solid #f8f8f8;
-      border-spacing: 15px 50px;
-      border-collapse: separate;
       padding-top: 3rem;
+
+      .box-content{
+        border-top: 2px solid $bg-secondary;
+        border-right: 2px solid $bg-secondary;
+        border-top-right-radius: 0px !important;
+        border-top-left-radius: 3px !important;
+        border-bottom-right-radius: 0px !important;
+      }
       h1 {
           font-size: 3rem;
           font-weight: 600;
+          color: $text-secondary;
+      }
+
+      p {
+          color: #dddddd;
+          font-weight: 200;
+          color: $text-secondary;
       }
   }
 
   .card {
-    background: #a9dbf8;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background: $bg-primary;
+    box-shadow: rgba(187, 187, 187, 0.25) 0px 14px 28px, rgba(185, 185, 185, 0.22) 0px 10px 10px;
     color: $text-secondary;
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    span {
+        font-weight: 400;
+    }
   }
 
   .btnSubmit{
       background: $bg-warning;
-      color: $bg-purple;
+      color: $text-secondary;
       font-weight: 500;
       font-size: 1.2rem;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      transition: all 0.3s ease;
+        &:hover {
+        transform: translate(0, -3px);
+        background: $bg-danger;
+        color: $text-primary;
+                }
   }
 
   .btnUpdate {
@@ -98,5 +128,6 @@ $bg-red: #D7385E;
       background: $bg-red;
       color: $text-primary;
   }
+  
   
 }

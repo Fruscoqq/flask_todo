@@ -13,12 +13,15 @@ def index():
 def add():
     # add new task
     description = request.form.get("description")
+    laptime = request.form.get("laptime")
     if description == "":
         flash("Something went wrong", "newWarning")
         return redirect(url_for("index"))
     else:
-        new_task = Tasks(description=description)
+        new_task = Tasks(description=description, laptime=laptime)
+        # new_laptime = Tasks(laptime=laptime)
         db.session.add(new_task)
+        # db.session.bulk_insert_mappings(new_task, new_laptime)
         db.session.commit()
         flash("Your item has been added successfully", "newSuccess")
         return redirect(url_for("index"))
@@ -29,6 +32,7 @@ def update(task_id):
     task = Tasks.query.get(task_id)
     if request.method == 'POST':
         task.description = request.form['description']
+        task.laptime = request.form['laptime']
         db.session.commit()
         return redirect(url_for('index'))
     else:

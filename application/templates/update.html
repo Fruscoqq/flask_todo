@@ -29,8 +29,9 @@
                 <form action="/update/{{task.id}}" method="POST">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <label for="description" class="form-label text-light">Update your task</label>
+                            <label for="description" class="form-label text-light">Update your track</label>
                             <input type="text" value="{{task.description}}" name="description" class="form-control">
+                            <input type="text" value="{{task.laptime}}" name="laptime" class="form-control">
                             <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                     </div>
