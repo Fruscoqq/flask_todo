@@ -1,0 +1,16 @@
+version: "3:8"
+services:
+  frontend:
+    build: ./frontend
+    image: trackhub-frontend:latest
+    container_name: trackhub-frontend
+    ports:
+      - target: 5000
+    published: 80
+  backend:
+    build: ./backend
+    image: trackhub-backend:latest
+    container_name: trackhub-backend
+    environment:
+      DATABASE_URI: null
+      SECRET_KEY: null
