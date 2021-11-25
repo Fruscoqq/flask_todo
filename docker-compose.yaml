@@ -6,7 +6,7 @@ services:
     container_name: trackhub-frontend
     ports:
       - target: 5000
-    published: 80
+        published: 80
   backend:
     build: ./backend
     image: arvydaskel/trackhub-backend:latest
