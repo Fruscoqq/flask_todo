@@ -1,5 +1,4 @@
 from application import app, db
-from application.models import Tasks
 from flask import render_template, redirect, url_for, request, flash
 
 
