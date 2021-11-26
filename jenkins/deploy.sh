@@ -2,4 +2,4 @@
 
 echo "Deploy stage"
 
-ssh jenkins@SwarmManager docker stack deploy --compose-file docker-compose.yaml trackhub
+ssh jenkins@swarm-manager docker stack deploy --compose-file docker-compose.yaml trackhub
