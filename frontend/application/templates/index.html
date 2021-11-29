@@ -85,8 +85,8 @@
 
                 <div class="card py-3 my-3">
                     <div class="card-body text-center justify-content-center">
-                        <p class="card-title lead">Track: <span>{{task.description}}</span></p>
-                        <p class="card-title lead">Laptime: <span>{{task.laptime}}</span></p>
+                        <p class="card-title lead">Track: <span>{{task["description"]}}</span></p>
+                        <p class="card-title lead">Laptime: <span>{{task["laptime"]}}</span></p>
                         <a href="/update/{{task.id}}" class="btn btnUpdate mx-3">Edit <i class="fas fa-pen"></i></a>
                         <button type="button" class="btn btnDelete" data-toggle="modal" data-target="#exampleModal">
                             Delete <i class="fas fa-trash"></i>

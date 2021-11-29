@@ -28,3 +28,4 @@ tomli==1.2.2
 webassets==2.0
 Werkzeug==2.0.2
 WTForms==3.0.0
+requests
