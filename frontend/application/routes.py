@@ -18,23 +18,22 @@ def add():
         flash("Something went wrong", "newWarning")
         return redirect(url_for("index"))
     else:
-        response = requests.post("http://trackhub-backend:5000/add", data = {"description": description,
+        response = requests.post("http://trackhub-backend:5000/add", json = {"description": description,
         "laptime": laptime})
         flash("Your item has been added successfully", "newSuccess")
         return redirect(url_for("index"))
 
-# # Update Route
-# @app.route('/update/<int:task_id>', methods=['POST', 'GET'])
-# def update(task_id):
-#     task = Tasks.query.get(task_id)
-#     if request.method == 'POST':
-#         task.description = request.form['description']
-#         task.laptime = request.form['laptime']
-#         db.session.commit()
-#         return redirect(url_for('index'))
-#     else:
-#         flash("Your item was updated successfully", "newSuccess")
-#         return render_template('update.html', task=task)
+# Update Route
+@app.route('/update/<int:task_id>', methods=['POST', 'GET'])
+def update(task_id):
+    task = requests.get(f"http://trackhub-backend:5000/read/{task_id}").json()
+    if request.method == 'POST':
+        response = requests.put(f"http://trackhub-backend:5000/read/{task_id}", json = {"description": description,
+        "laptime": laptime})
+        return redirect(url_for('index'))
+    else:
+        flash("Your item was updated successfully", "newSuccess")
+        return render_template('update.html', task=task)
 
 # # Delete route
 # @app.route('/delete/<int:task_id>')
