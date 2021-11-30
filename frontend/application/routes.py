@@ -35,13 +35,11 @@ def update(task_id):
         flash("Your item was updated successfully", "newSuccess")
         return render_template('update.html', task=task)
 
-# # Delete route
-# @app.route('/delete/<int:task_id>')
-# def delete(task_id):
-#     # delete task
-#     task = Tasks.query.filter_by(id=task_id).first()
-#     db.session.delete(task)
-#     db.session.commit()
-#     flash("Your item has been deleted", "newDanger")
-#     return redirect(url_for("index"))
+# Delete route
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    # delete task
+    response = requests.delete(f"http://trackhub-backend:5000/delete/{task_id}")
+    flash("Your item has been deleted", "newDanger")
+    return redirect(url_for("index"))
 
