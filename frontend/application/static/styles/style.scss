@@ -51,18 +51,8 @@ $bg-red: #D7385E;
 }
 
 .container {
-    // background-image: linear-gradient(to right top, #165bc2, #2164cd, #2b6dd7, #3476e2, #3c7fed);
-    // background-image: linear-gradient(to right top, #07689f, #0978aa, #1988b3, #2c98bc, #40a8c4);
     background: rgb(240, 240, 240);
     box-shadow: rgba(192, 192, 192, 0.25) 0px 14px 28px, rgba(70, 70, 70, 0.22) 0px 10px 10px;
-    
-
-    // .submit {
-    // transition: all 0.2s ease;
-    //     &:hover {
-    //     transform: translate(0, -3px);
-    //             }
-    //         }
 
   .modal i {
       color: #DC3545;
@@ -131,3 +121,23 @@ $bg-red: #D7385E;
   
   
 }
+
+
+.box-content2{
+    border-top: 2px solid $bg-secondary;
+    border-right: 2px solid $bg-secondary;
+    border-top-right-radius: 6px !important;
+    border-top-left-radius: 3px !important;
+    border-bottom-right-radius: 0px !important;
+  }
+  h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: $text-secondary;
+  }
+
+  p {
+      color: #dddddd;
+      font-weight: 200;
+      color: $text-secondary;
+  }

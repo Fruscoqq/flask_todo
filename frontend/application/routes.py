@@ -28,8 +28,8 @@ def add():
 def update(task_id):
     task = requests.get(f"http://trackhub-backend:5000/read/{task_id}").json()
     if request.method == 'POST':
-        response = requests.put(f"http://trackhub-backend:5000/read/{task_id}", json = {"description": description,
-        "laptime": laptime})
+        response = requests.put(f"http://trackhub-backend:5000/update/{task_id}", json = {"description": request.form['description'],
+        "laptime": request.form['laptime']})
         return redirect(url_for('index'))
     else:
         flash("Your item was updated successfully", "newSuccess")
