@@ -4,6 +4,8 @@ services:
     build: ./frontend
     image: arvydaskel/trackhub-frontend:latest
     container_name: trackhub-frontend
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
     ports:
       - target: 5000
         published: 80
@@ -12,5 +14,7 @@ services:
     image: arvydaskel/trackhub-backend:latest
     container_name: trackhub-backend
     environment:
-      DATABASE_URI: null
-      SECRET_KEY: null
+      DATABASE_URI: ${DATABASE_URI}
+    ports:
+      - target: 5000
+        published: 5000

@@ -27,6 +27,17 @@ def add():
         return f"Added description {new_task.description}, laptime {new_task.laptime}"
 
 # Update Route
+@app.route('/read/<int:task_id>', methods=['GET'])
+def read(task_id):
+        task = Tasks.query.get(task_id)
+        tasks_dict = {
+            "id": task.id,
+            "description": task.description,
+            "laptime": task.laptime
+        }
+        return jsonify(tasks_dict)
+# Update Route
+
 @app.route('/update/<int:task_id>', methods=['PUT'])
 def update(task_id):
         task = Tasks.query.get(task_id)
