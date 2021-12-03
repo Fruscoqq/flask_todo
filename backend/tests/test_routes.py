@@ -1,6 +1,5 @@
 from flask import url_for
 from flask_testing import TestCase
-
 from application import app, db
 from application.models import Tasks
 
@@ -9,9 +8,7 @@ class TestBase(TestCase):
     def create_app(self):
 
         # Pass in testing configurations for the app. 
-        # Here we use sqlite without a persistent database for our tests.
         app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///",
-                SECRET_KEY='TEST_SECRET_KEY',
                 DEBUG=True,
                 WTF_CSRF_ENABLED=False
                 )
@@ -33,9 +30,22 @@ class TestBase(TestCase):
         db.session.remove()
         db.drop_all()
 
-# Checking if the index page opens
-class TestViews(TestBase):
-    def test_index_get(self):
+class TestRead(TestBase):
+    def test_index(self):
         response = self.client.get(url_for('index'))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'This is test description', response.data)
+        self.assertIn(b'Run unit tests', response.data)
+# Add task
+    def test_add(self):
+        response = self.client.get(url_for(''))
+
+# Get a single task
+    def test_read(self):
+        response = self.client.get(url_for(''))
+
+# Update the task
+    def test_update(self):
+        response = self.client.get(url_for(''))
+
+# Delete the task
+    def test_read(self):
+        response = self.client.get(url_for(''))
