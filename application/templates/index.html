@@ -23,18 +23,11 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 {% for task in tasks_list %}
-                <!-- <div class="card">
-               <h4>{{task.description}}</h4>
-               <a href="/update/{{task.id}}" class="btn btn-warning">Update</a>
-               <a href="/delete/{{task.id}}" class="btn btn-danger">Delete</a>
-           </div> -->
 
                 <div class="card py-3 my-3" style="width: 28rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{task.description}}</h5>
-                        <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-                            laudantium
-                            itaque doloremque.</p> -->
+                       
                         <a href="/update/{{task.id}}" class="btn btn-warning">Update</a>
                         <a href="/delete/{{task.id}}" class="btn btn-danger">Delete</a>
                     </div>
